@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.User.UserDao">
+    <resultMap id="User" type="com.shang.pojo.User">
+        <result property="userid" column="userid"></result>
+        <result property="username" column="username"></result>
+        <result property="head" column="head"></result>
+        <result property="viewcount" column="viewcount"></result>
+        <result property="createtime" column="createtime"></result>
+        <result property="userrole" column="userrole"></result>
+        <result property="userlocal" column="userlocal"></result>
+        <collection property="myarticles" column="" javaType="com.shang.pojo.Article">
+            <result property="userid" column="userid"></result>
+            <result property="articleid" column="articleid"></result>
+            <result property="categoryid" column="categoryid"></result>
+            <result property="title" column="title"></result>
+            <result property="createtime" column="createtime"></result>
+            <result property="istop" column="istop"></result>
+            <association property="category" column="" javaType="com.shang.pojo.Category">
+                <result property="categoryid" column="categoryid"></result>
+                <result property="categoryname" column="categoryname"></result>
+            </association>
+            <collection property="tags" javaType="com.shang.pojo.Tag">
+                <result property="tagid" column="tagid"></result>
+                <result property="tagname" column="tagname"></result>
+            </collection>
+        </collection>
+    </resultMap>
+    <resultMap id="Users" type="com.shang.pojo.User">
+        <result property="userid" column="userid"></result>
+        <result property="username" column="username"></result>
+        <result property="head" column="head"></result>
+        <result property="viewcount" column="viewcount"></result>
+        <result property="userlocal" column="userlocal"></result>
+    </resultMap>
+<select id="queryUserByid" resultMap="User">
+    select * from `user`,article,category,tag,articletag
+    where `user`.userid=article.userid and article.categoryid=category.categoryid
+      and article.articleid=articletag.articleid
+      and tag.tagid=articletag.tagid
+       and `user`.userid= #{userid};
+</select>
+    <select id="queryUserByname" resultMap="Users">
+        SELECT
+            *
+        FROM
+            `user`
+        <where>
+        <if test="username!=''">
+         `user`.username = #{username}
+         </if>
+
+        </where>
+        limit #{currentpageno},#{pagesize};
+    </select>
+    <select id="getUserCountByname" resultType="_int">
+        SELECT
+        count(distinct userid)
+        FROM
+        `user`
+        <where>
+            <if test="username!=''">
+                `user`.username = #{username}
+            </if>
+
+        </where>
+    </select>
+</mapper>

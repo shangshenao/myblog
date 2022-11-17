@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.Comment.CommentDao">
+    <resultMap id="Comment" type="com.shang.pojo.Comment">
+        <result property="commentid" column="commentid"></result>
+        <result property="commentfid" column="commentfid"></result>
+        <result property="userid" column="userid"></result>
+        <result property="content" column="content"></result>
+        <result property="createtime" column="createtime"></result>
+        <association property="user" column="" javaType="com.shang.pojo.User">
+            <result property="userid" column="userid"></result>
+            <result property="username" column="username"></result>
+            <result property="head" column="head"></result>
+            <result property="userlocal" column="userlocal"></result>
+        </association>
+        <association property="userf" column="" javaType="com.shang.pojo.User">
+            <result property="userid" column="userid"></result>
+            <result property="username" column="username"></result>
+            <result property="userlocal" column="userlocal"></result>
+        </association>
+    </resultMap>
+
+    <select id="queryCommentsByrootid" resultMap="Comment">
+        SELECT * FROM `comment` as comment1,`comment` as comment2 ,`user` as user1 ,`user` as user2
+        where comment1.commentfid=comment2.commentid and comment1.userid=user1.userid
+              and comment2.userid=user2.userid
+              and comment1.rootid=#{rootid}
+    </select>
+
+</mapper>

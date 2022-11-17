@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.Article.ArticleDao">
+    <insert id="insertArticle">
+        INSERT INTO article ( userid, categoryid, title, content_markdown, content_html, istop )
+        VALUES
+            (#{userid},#{categoryid},#{title},#{content_markdown},#{content_html},#{istop})
+    </insert>
+    <update id="updateArticle">
+
+    </update>
+    <update id="updateArticle" >
+
+    </update>
+    <resultMap id="resarticle" type="com.shang.pojo.Article">
+        <result property="userid" column="userid"></result>
+        <result property="articleid" column="articleid"></result>
+        <result property="categoryid" column="categoryid"></result>
+        <result property="title" column="title"></result>
+        <result property="createtime" column="createtime"></result>
+        <result property="content_markdown" column="content_markdown"></result>
+        <result property="content_html" column="content_html"></result>
+       <association property="category" column="" javaType="com.shang.pojo.Category">
+           <result property="categoryid" column="categoryid"></result>
+           <result property="categoryname" column="categoryname"></result>
+       </association>
+        <collection property="comments" column="" javaType="com.shang.pojo.Comment">
+            <result property="commentid" column="commentid"></result>
+            <result property="commentfid" column="commentfid"></result>
+            <result property="userid" column="userid"></result>
+            <result property="content" column="content"></result>
+            <result property="createtime" column="createtime"></result>
+            <association property="user" column="">
+                <result property="userid" column="userid"></result>
+                <result property="username" column="username"></result>
+                <result property="head" column="head"></result>
+                <result property="userlocal" column="userlocal"></result>
+            </association>
+        </collection>
+    </resultMap>
+    <resultMap id="resarticles" type="com.shang.pojo.Article">
+        <result property="userid" column="userid"></result>
+        <result property="articleid" column="articleid"></result>
+        <result property="categoryid" column="categoryid"></result>
+        <result property="title" column="title"></result>
+        <result property="createtime" column="createtime"></result>
+        <result property="istop" column="istop"></result>
+        <association property="category" column="" javaType="com.shang.pojo.Category">
+            <result property="categoryid" column="categoryid"></result>
+            <result property="categoryname" column="categoryname"></result>
+        </association>
+        <association property="user" column="">
+            <result property="userid" column="userid"></result>
+            <result property="username" column="username"></result>
+            <result property="head" column="head"></result>
+            <result property="userlocal" column="userlocal"></result>
+        </association>
+        <collection property="tags" javaType="com.shang.pojo.Tag">
+            <result property="tagid" column="tagid"></result>
+            <result property="tagname" column="tagname"></result>
+        </collection>
+
+    </resultMap>
+    <select id="queryArticle" resultMap="resarticle">
+        select * from article,`user`,`comment` where article.userid=`user`.userid and article.articleid=`comment`.articleid  and comment.rootid=0 and article.articleid=#{articleid};
+    </select>
+
+    <select id="queryArticles" resultMap="resarticles">
+        SELECT * FROM article,`user`,tag,category,articletag
+        <where> article.userid=`user`.userid and category.categoryid=article.categoryid and articletag.tagid=tag.tagid and articletag.articleid=article.articleid
+        <if test="categoryname!=''"> and category.categoryname=#{categoryname} </if>
+        <if test="title!=''">and article.title=#{title}</if>
+        <if test="tags!=null">
+        and tag.tagname
+        <foreach collection="tags" open="in(" close=")" separator="," item="tag">
+            #{tag}
+        </foreach>
+        </if>
+
+        </where>
+        order by article.createtime limit #{currentpageno},#{pagesize};
+    </select>
+    <select id="queryArticlesBytime" resultMap="resarticles">
+        SELECT * FROM article,`user`,tag,category,articletag
+        <where> article.userid=`user`.userid and category.categoryid=article.categoryid and articletag.tagid=tag.tagid and articletag.articleid=article.articleid
+
+        </where>
+        order by article.createtime limit #{currentpageno},#{pagesize};
+    </select>
+    <select id="getArticlesCount" resultType="_int">
+        SELECT  count(DISTINCT article.articleid )FROM article,`user`,tag,category,articletag
+        <where> article.userid=`user`.userid and category.categoryid=article.categoryid and articletag.tagid=tag.tagid and articletag.articleid=article.articleid
+            <if test="categoryname!=''"> and category.categoryname=#{categoryname} </if>
+            <if test="title!=''">and article.title=#{title}</if>
+            <if test="tags!=null">
+                and tag.tagname
+                <foreach collection="tags" open="in(" close=")" separator="," item="tag">
+                    #{tag}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+</mapper>

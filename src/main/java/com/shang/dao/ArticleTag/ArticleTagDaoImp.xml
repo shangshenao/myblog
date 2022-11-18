@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.ArticleTag.ArticleTagDao">
+    <insert id="insertArticleTag">
+        insert into articletag(articleid,tagid) values(#{articleid},#{tagid})
+    </insert>
+    <update id="updateArticleTag">
+        update articletag set articleid=#{newarticleid},tagid=#{newtagid} where articleid=#{oldarticleid} and tagid=#{oldtagid}
+    </update>
+    <delete id="deleteArticleTag">
+        delete FROM articletag
+        where  articleid=#{articleid} and tagid=#{tagid}
+    </delete>
+</mapper>

@@ -5,7 +5,6 @@ import java.util.Date;
 public class UserArticleLike {
     private int userid;
     private int articleid;
-    private Byte islike;
     private Date liketime;
     private User user;
     private Article article;
@@ -42,12 +41,15 @@ public class UserArticleLike {
         this.articleid = articleid;
     }
 
-    public Byte getIslike() {
-        return islike;
-    }
-
-    public void setIslike(Byte islike) {
-        this.islike = islike;
+    @Override
+    public String toString() {
+        return "UserArticleLike{" +
+                "userid=" + userid +
+                ", articleid=" + articleid +
+                ", liketime=" + liketime +
+                ", user=" + user +
+                ", article=" + article +
+                '}';
     }
 
     public Date getLiketime() {

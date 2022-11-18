@@ -13,6 +13,6 @@ public interface TagDao {
     //更改tag
     public int updateTag(@Param("tagid") int tagid,@Param("tagname") String tagname);
     //查询所有tag
-    public List<Tag> queryTags();
+    public List<Tag> queryAllTags();
 
 }

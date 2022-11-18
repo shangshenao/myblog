@@ -9,7 +9,9 @@ public interface ArticleDao {
     //插入一个文章
     public int insertArticle(@Param("userid") int userid,@Param("categoryid") int categoryid,@Param("title") String title,@Param("content_markdown") String content_markdown,@Param("content_html") String content_html,@Param("istop") Byte istop);
     //更改一篇文章
-    public int updateArticle(@Param("articleid") int articleid,@Param("userid") int userid,@Param("categoryid") String categoryid,@Param("title") String title,@Param("content_markdown") String content_markdown,@Param("content_html") String content_html);
+    public int updateArticle(@Param("articleid") int articleid,@Param("categoryid") int categoryid,@Param("title") String title,@Param("content_markdown") String content_markdown,@Param("content_html") String content_html,@Param("istop") Byte istop);
+    //更改一篇文章数据
+    public int updateArticleData(@Param("articleid") int articleid,@Param("viewcount") int viewcount,@Param("likecount") int likecount,@Param("favcount") int favcount,@Param("commentcount") int commentcount);
     //删除一篇文章
     public int deleteArticle(@Param("articleid") int articleid);
     //根据id查文章(需要显示文章全部内容) 返回的评论只有根评论

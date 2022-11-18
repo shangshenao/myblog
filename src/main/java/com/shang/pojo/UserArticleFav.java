@@ -25,6 +25,17 @@ public class UserArticleFav {
         this.articleid = articleid;
     }
 
+    @Override
+    public String toString() {
+        return "UserArticleFav{" +
+                "userid=" + userid +
+                ", articleid=" + articleid +
+                ", addtime=" + addtime +
+                ", user=" + user +
+                ", article=" + article +
+                '}';
+    }
+
     public Date getAddtime() {
         return addtime;
     }

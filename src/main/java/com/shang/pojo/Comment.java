@@ -9,6 +9,7 @@ public class Comment {
     private int commentfid;
     private int articleid;
     private int userid;
+    private int clikecount;
     private String content;
     private Date createtime;
     private User user;
@@ -36,14 +37,6 @@ public class Comment {
         this.userf = userf;
     }
 
-    public Article getArticle() {
-        return article;
-    }
-
-    public void setArticle(Article article) {
-        this.article = article;
-    }
-
     @Override
     public String toString() {
         return "Comment{" +
@@ -51,6 +44,7 @@ public class Comment {
                 ", commentfid=" + commentfid +
                 ", articleid=" + articleid +
                 ", userid=" + userid +
+                ", clikecount=" + clikecount +
                 ", content='" + content + '\'' +
                 ", createtime=" + createtime +
                 ", user=" + user +
@@ -60,6 +54,22 @@ public class Comment {
                 ", lusers=" + lusers +
                 ", comments=" + comments +
                 '}';
+    }
+
+    public int getClikecount() {
+        return clikecount;
+    }
+
+    public void setClikecount(int clikecount) {
+        this.clikecount = clikecount;
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
     }
 
     public List<Comment> getComments() {

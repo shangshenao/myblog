@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.UserArticleFav.UserArticleFavDao">
+    <insert id="insertUserArticleFav">
+        insert into userarticle_fav(userid,articleid) values(#{userid},#{articleid})
+    </insert>
+    <delete id="deleteUserArticleFav">
+        delete from userarticle_fav where userid=#{userid} and articleid=#{articleid}
+    </delete>
+    <resultMap id="Fav" type="com.shang.pojo.UserArticleFav">
+        <result property="userid" column="userid"></result>
+        <result property="articleid" column="articleid"></result>
+        <result property="addtime" column="addtime"></result>
+        <association property="article" column="" javaType="com.shang.pojo.Article">
+            <result property="userid" column="userid"></result>
+            <result property="articleid" column="articleid"></result>
+            <result property="categoryid" column="categoryid"></result>
+            <result property="title" column="title"></result>
+            <result property="createtime" column="createtime"></result>
+            <result property="istop" column="istop"></result>
+            <result property="likecount" column="likecount"></result>
+            <result property="favcount" column="favcount"></result>
+            <result property="commentcount" column="commentcount"></result>
+            <association property="category" column="" javaType="com.shang.pojo.Category">
+                <result property="categoryid" column="categoryid"></result>
+                <result property="categoryname" column="categoryname"></result>
+            </association>
+            <association property="user" column="">
+                <result property="userid" column="userid"></result>
+                <result property="username" column="username"></result>
+                <result property="head" column="head"></result>
+                <result property="userlocal" column="userlocal"></result>
+            </association>
+        </association>
+    </resultMap>
+    <select id="queryUserArticleFavByuserid" resultMap="Fav">
+        SELECT
+            *
+        FROM
+            `userarticle_fav`,
+            article,
+            `user`,
+            category
+        WHERE
+            `userarticle_fav`.articleid = #{userid}
+          AND `userarticle_fav`.articleid = article.articleid
+          AND article.userid = `user`.userid
+          AND article.categoryid = category.categoryid
+
+    </select>
+</mapper>

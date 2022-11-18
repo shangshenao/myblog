@@ -9,6 +9,9 @@
         <mapper class="com.shang.dao.Article.ArticleDao"></mapper>
         <mapper class="com.shang.dao.Comment.CommentDao"></mapper>
         <mapper class="com.shang.dao.User.UserDao"></mapper>
+        <mapper class="com.shang.dao.Category.CategoryDao"></mapper>
+        <mapper class="com.shang.dao.Tag.TagDao"></mapper>
+        <mapper class="com.shang.dao.UserArticleFav.UserArticleFavDao"></mapper>
     </mappers>
 
 </configuration>

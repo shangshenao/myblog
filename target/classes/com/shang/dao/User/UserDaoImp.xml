@@ -3,6 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shang.dao.User.UserDao">
+    <insert id="insertUser">
+        insert into `user`(username,userpwd,head,userrole,userlocal)
+        values(#{username},#{userpwd},#{head},#{userrole},#{userlocal})
+    </insert>
+    <update id="updateUser">
+        update `user` set username=#{username},userpwd=#{userpwd},head=#{head},userrole=#{userrole},userlocal=#{userlocal}
+        where userid=#{userid};
+    </update>
+    <delete id="deleteUser">
+        delete from `user` where userid=#{userid}
+    </delete>
     <resultMap id="User" type="com.shang.pojo.User">
         <result property="userid" column="userid"></result>
         <result property="username" column="username"></result>
@@ -18,6 +29,9 @@
             <result property="title" column="title"></result>
             <result property="createtime" column="createtime"></result>
             <result property="istop" column="istop"></result>
+            <result property="likecount" column="likecount"></result>
+            <result property="favcount" column="favcount"></result>
+            <result property="commentcount" column="commentcount"></result>
             <association property="category" column="" javaType="com.shang.pojo.Category">
                 <result property="categoryid" column="categoryid"></result>
                 <result property="categoryname" column="categoryname"></result>
@@ -48,8 +62,10 @@
         FROM
             `user`
         <where>
-        <if test="username!=''"></if>
-            `user`.username = #{username}
+        <if test="username!=''">
+         `user`.username = #{username}
+         </if>
+
         </where>
         limit #{currentpageno},#{pagesize};
     </select>
@@ -62,7 +78,6 @@
             <if test="username!=''">
                 `user`.username = #{username}
             </if>
-
         </where>
     </select>
 </mapper>

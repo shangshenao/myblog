@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.UserCommentLike.UserCommentLikeDao">
+    <insert id="insertUserCommentLike">
+        insert into usercomment_like(userid,commentid) values(#{userid},#{commentid})
+    </insert>
+    <delete id="deleteUserCommentLike">
+        delete from usercomment_like where userid=#{userid} and commentid=#{commentid}
+    </delete>
+    <resultMap id="Likes" type="com.shang.pojo.UserCommentLike">
+        <result property="commentid" column="commentid"></result>
+        <result property="userid" column="userid"></result>
+        <result property="liketime" column="liketime"></result>
+        <association property="comment" column="">
+            <result property="commentid" column="commentid"></result>
+            <result property="userid" column="userid"></result>
+            <result property="content" column="content"></result>
+            <result property="createtime" column="createtime"></result>
+            <result property="clikecount" column="clikecount"></result>
+            <association property="user" column="" javaType="com.shang.pojo.User">
+                <result property="userid" column="userid"></result>
+                <result property="username" column="username"></result>
+                <result property="head" column="head"></result>
+                <result property="userlocal" column="userlocal"></result>
+            </association>
+        </association>
+    </resultMap>
+    <select id="queryUserCommentLikes" resultMap="Likes">
+        SELECT
+            *
+        FROM
+            usercomment_like,
+            `comment`,
+            `user`
+        WHERE
+            usercomment_like.commentid = `comment`.commentid
+          AND `comment`.userid = `user`.userid
+          and usercomment_like.userid=#{userid}
+    </select>
+</mapper>

@@ -25,6 +25,11 @@ public class CommentDaoImp implements CommentDao{
         return commentDao.deleteComment(commentid);
     }
 
+    public int updateComment(int articleid, int clikecount) {
+        CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
+        return commentDao.updateComment(articleid,clikecount);
+    }
+
 
     public List<Comment> queryCommentsByrootid(int rootid)
     {

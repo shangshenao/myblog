@@ -14,6 +14,9 @@ public class Article {
     private int viewcount;
     private String content_markdown;
     private String content_html;
+    private int likecount;
+    private int favcount;
+    private int commentcount;
     private Category category;
     private User user;
     //一对多
@@ -28,10 +31,6 @@ public class Article {
         return user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     @Override
     public String toString() {
         return "Article{" +
@@ -44,6 +43,9 @@ public class Article {
                 ", viewcount=" + viewcount +
                 ", content_markdown='" + content_markdown + '\'' +
                 ", content_html='" + content_html + '\'' +
+                ", likecount=" + likecount +
+                ", favcount=" + favcount +
+                ", commentcount=" + commentcount +
                 ", category=" + category +
                 ", user=" + user +
                 ", comments=" + comments +
@@ -52,6 +54,34 @@ public class Article {
                 ", lusers=" + lusers +
                 ", tags=" + tags +
                 '}';
+    }
+
+    public int getLikecount() {
+        return likecount;
+    }
+
+    public void setLikecount(int likecount) {
+        this.likecount = likecount;
+    }
+
+    public int getFavcount() {
+        return favcount;
+    }
+
+    public void setFavcount(int favcount) {
+        this.favcount = favcount;
+    }
+
+    public int getCommentcount() {
+        return commentcount;
+    }
+
+    public void setCommentcount(int commentcount) {
+        this.commentcount = commentcount;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Byte getIstop() {

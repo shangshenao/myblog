@@ -16,6 +16,15 @@ public class Tag {
         this.articles = articles;
     }
 
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "tagid=" + tagid +
+                ", tagname='" + tagname + '\'' +
+                ", articles=" + articles +
+                '}';
+    }
+
     public int getTagid() {
         return tagid;
     }

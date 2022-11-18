@@ -23,9 +23,14 @@ public class ArticleDaoImp implements ArticleDao{
         return articleDao.insertArticle(userid, categoryid, title, content_markdown, content_html, istop);
     }
 
-    public int updateArticle(int articleid, int userid, String categoryid, String title, String content_markdown, String content_html) {
+    public int updateArticle(int articleid, int categoryid, String title, String content_markdown, String content_html,Byte istop) {
         ArticleDao articleDao=sqlsessionTemplate.getMapper(ArticleDao.class);
-        return articleDao.updateArticle(articleid, userid, categoryid, title, content_markdown, content_html);
+        return articleDao.updateArticle(articleid, categoryid, title, content_markdown, content_html,istop);
+    }
+
+    public int updateArticleData(int articleid, int viewcount, int likecount, int favcount, int commentcount) {
+        ArticleDao articleDao=sqlsessionTemplate.getMapper(ArticleDao.class);
+        return articleDao.updateArticleData(articleid, viewcount, likecount, favcount, commentcount);
     }
 
     public int deleteArticle(int articleid) {

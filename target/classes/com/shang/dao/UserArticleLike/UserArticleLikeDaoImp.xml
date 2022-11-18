@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.UserArticleLike.UserArticleLikeDao">
+    <insert id="insertUserArticleLike">
+        insert into userarticle_like(userid,articleid) values(#{userid},#{articleid})
+    </insert>
+    <delete id="deleteUserArticleLike">
+        delete from userarticle_like where userid=#{userid} and articleid=#{articleid}
+    </delete>
+    <resultMap id="Likes" type="com.shang.pojo.UserArticleLike">
+        <result property="userid" column="userid"></result>
+        <result property="articleid" column="articleid"></result>
+        <result property="liketime" column="liketime"></result>
+        <association property="article" column="" javaType="com.shang.pojo.Article">
+            <result property="userid" column="userid"></result>
+            <result property="articleid" column="articleid"></result>
+            <result property="categoryid" column="categoryid"></result>
+            <result property="title" column="title"></result>
+            <result property="createtime" column="createtime"></result>
+            <result property="istop" column="istop"></result>
+            <result property="likecount" column="likecount"></result>
+            <result property="favcount" column="favcount"></result>
+            <result property="commentcount" column="commentcount"></result>
+            <association property="category" column="" javaType="com.shang.pojo.Category">
+                <result property="categoryid" column="categoryid"></result>
+                <result property="categoryname" column="categoryname"></result>
+            </association>
+            <association property="user" column="">
+                <result property="userid" column="userid"></result>
+                <result property="username" column="username"></result>
+                <result property="head" column="head"></result>
+                <result property="userlocal" column="userlocal"></result>
+            </association>
+        </association>
+    </resultMap>
+    <select id="queryUserArticleLikes" resultMap="Likes">
+        SELECT
+            *
+        FROM
+            userarticle_like,
+            article,
+            category,
+            `user`
+        WHERE
+            userarticle_like.userid = article.userid
+          AND article.categoryid = category.categoryid
+          AND article.userid = `user`.userid
+          and article.userid=#{userid}
+    </select>
+</mapper>

@@ -9,11 +9,22 @@
             (#{userid},#{categoryid},#{title},#{content_markdown},#{content_html},#{istop})
     </insert>
     <update id="updateArticle">
-
+        update article
+        <set>
+           categoryid=#{categoryid}, title=#{title}, content_markdown=#{content_markdown}, content_html=#{content_html}, istop=#{istop}
+        </set>
+        where articleid=#{articleid};
     </update>
-    <update id="updateArticle" >
-
+    <update id="updateArticleData">
+        update article
+        <set>
+            viewcount=viewcount+#{viewcount}, likecount=likecount+#{likecount}, favcount=favcount+#{favcount},commentcount=commentcount+#{commentcount}
+        </set>
+        where articleid=#{articleid};
     </update>
+    <delete id="deleteArticle">
+        delete from article where articleid=#{articleid}
+    </delete>
     <resultMap id="resarticle" type="com.shang.pojo.Article">
         <result property="userid" column="userid"></result>
         <result property="articleid" column="articleid"></result>
@@ -22,6 +33,9 @@
         <result property="createtime" column="createtime"></result>
         <result property="content_markdown" column="content_markdown"></result>
         <result property="content_html" column="content_html"></result>
+        <result property="likecount" column="likecount"></result>
+        <result property="favcount" column="favcount"></result>
+        <result property="commentcount" column="commentcount"></result>
        <association property="category" column="" javaType="com.shang.pojo.Category">
            <result property="categoryid" column="categoryid"></result>
            <result property="categoryname" column="categoryname"></result>
@@ -32,6 +46,7 @@
             <result property="userid" column="userid"></result>
             <result property="content" column="content"></result>
             <result property="createtime" column="createtime"></result>
+            <result property="clikecount" column="clikecount"></result>
             <association property="user" column="">
                 <result property="userid" column="userid"></result>
                 <result property="username" column="username"></result>
@@ -47,6 +62,9 @@
         <result property="title" column="title"></result>
         <result property="createtime" column="createtime"></result>
         <result property="istop" column="istop"></result>
+        <result property="likecount" column="likecount"></result>
+        <result property="favcount" column="favcount"></result>
+        <result property="commentcount" column="commentcount"></result>
         <association property="category" column="" javaType="com.shang.pojo.Category">
             <result property="categoryid" column="categoryid"></result>
             <result property="categoryname" column="categoryname"></result>

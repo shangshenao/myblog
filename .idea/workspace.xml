@@ -13,7 +13,6 @@
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/aopalliance-1.0.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/spring-aop-5.2.3.RELEASE.jar" afterDir="false" />
@@ -32,37 +31,64 @@
       <change afterPath="$PROJECT_DIR$/lib/spring-test-5.2.3.RELEASE.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/spring-tx-5.2.3.RELEASE.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDaoImp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Category/CategoryDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDaoImp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Tag/TagDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/ArticleTag/ArticleTagDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/ArticleTag/ArticleTagDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/ArticleTag/ArticleTagDaoImp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Category/CategoryDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Category/CategoryDaoImp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Tag/TagDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Tag/TagDaoImp.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/User/UserDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/User/UserDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/User/UserDaoImp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleComment/UserArticleCommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleComment/UserArticleCommentDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleComment/UserArticleCommentDaoImp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleFav/UserArticleFavDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleFav/UserArticleFavDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleFav/UserArticleFavDaoImp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleLike/UserArticleLikeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleLike/UserArticleLikeDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserArticleLike/UserArticleLikeDaoImp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserCommentLike/UserCommentLikeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserCommentLike/UserCommentLikeDaoImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/UserCommentLike/UserCommentLikeDaoImp.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/ArticleTag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Tag.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserArticleComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserArticleFav.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserArticleLike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserCommentLike.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserUser.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/configcontext.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis_config.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/springdao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Article/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Comment/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/User/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/ArticleTag/ArticleTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Category/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Tag/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/UserArticleComment/UserArticleComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/UserArticleFav/UserArticleFav.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/UserArticleLike/UserArticleLike.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/UserCommentLike/UserCommentLike.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDaoImp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Article/ArticleDaoImp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Category/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Category/CategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDaoImp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Comment/CommentDaoImp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/Tag/TagDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/Tag/TagDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/dao/User/UserDaoImp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/dao/User/UserDaoImp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserArticleFav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserArticleFav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserArticleLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserArticleLike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserCommentLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shang/pojo/UserCommentLike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Article/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Article/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Comment/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/Comment/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shang/test/dao/User/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +99,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
+        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -123,82 +150,82 @@
       <recent name="D:\java_project\myblog\myblog\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.User.getUserCountByname">
-    <configuration name="Article.queryArticle (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserCommentLike.deleteUserCommentLike">
+    <configuration name="UserArticleLike.deleteUserArticleLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shang.test.dao.Article.*" />
+          <option name="PATTERN" value="com.shang.test.dao.UserArticleLike.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shang.test.dao.Article" />
-      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.Article.Article" />
-      <option name="METHOD_NAME" value="queryArticle" />
+      <option name="PACKAGE_NAME" value="com.shang.test.dao.UserArticleLike" />
+      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.UserArticleLike.UserArticleLike" />
+      <option name="METHOD_NAME" value="deleteUserArticleLike" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Comment.queryCommentsByrootid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserArticleLike.queryUserArticleLikes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shang.test.dao.Comment.*" />
+          <option name="PATTERN" value="com.shang.test.dao.UserArticleLike.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shang.test.dao.Comment" />
-      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.Comment.Comment" />
-      <option name="METHOD_NAME" value="queryCommentsByrootid" />
+      <option name="PACKAGE_NAME" value="com.shang.test.dao.UserArticleLike" />
+      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.UserArticleLike.UserArticleLike" />
+      <option name="METHOD_NAME" value="queryUserArticleLikes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="User.getUserCountByname" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserCommentLike.deleteUserCommentLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shang.test.dao.User.*" />
+          <option name="PATTERN" value="com.shang.test.dao.UserCommentLike.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shang.test.dao.User" />
-      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.User.User" />
-      <option name="METHOD_NAME" value="getUserCountByname" />
+      <option name="PACKAGE_NAME" value="com.shang.test.dao.UserCommentLike" />
+      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.UserCommentLike.UserCommentLike" />
+      <option name="METHOD_NAME" value="deleteUserCommentLike" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="User.queryUserByid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserCommentLike.insertUserCommentLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shang.test.dao.User.*" />
+          <option name="PATTERN" value="com.shang.test.dao.UserCommentLike.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shang.test.dao.User" />
-      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.User.User" />
-      <option name="METHOD_NAME" value="queryUserByid" />
+      <option name="PACKAGE_NAME" value="com.shang.test.dao.UserCommentLike" />
+      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.UserCommentLike.UserCommentLike" />
+      <option name="METHOD_NAME" value="insertUserCommentLike" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="User.queryUserByname" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserCommentLike.queryUserCommentLikes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shang.test.dao.User.*" />
+          <option name="PATTERN" value="com.shang.test.dao.UserCommentLike.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shang.test.dao.User" />
-      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.User.User" />
-      <option name="METHOD_NAME" value="queryUserByname" />
+      <option name="PACKAGE_NAME" value="com.shang.test.dao.UserCommentLike" />
+      <option name="MAIN_CLASS_NAME" value="com.shang.test.dao.UserCommentLike.UserCommentLike" />
+      <option name="METHOD_NAME" value="queryUserCommentLikes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.User.getUserCountByname" />
-        <item itemvalue="JUnit.User.queryUserByid" />
-        <item itemvalue="JUnit.User.queryUserByname" />
-        <item itemvalue="JUnit.Comment.queryCommentsByrootid" />
-        <item itemvalue="JUnit.Article.queryArticle (1)" />
+        <item itemvalue="JUnit.UserCommentLike.deleteUserCommentLike" />
+        <item itemvalue="JUnit.UserCommentLike.queryUserCommentLikes" />
+        <item itemvalue="JUnit.UserCommentLike.insertUserCommentLike" />
+        <item itemvalue="JUnit.UserArticleLike.deleteUserArticleLike" />
+        <item itemvalue="JUnit.UserArticleLike.queryUserArticleLikes" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +249,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668421589282</updated>
-      <workItem from="1668421591210" duration="57319000" />
+      <workItem from="1668421591210" duration="83344000" />
     </task>
     <servers />
   </component>

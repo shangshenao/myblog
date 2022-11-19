@@ -36,4 +36,9 @@ public class CommentDaoImp implements CommentDao{
         CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
         return commentDao.queryCommentsByrootid(rootid);
     }
+
+    public List<Comment> queryCommentsBycommentfid(int userid) {
+        CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
+        return commentDao.queryCommentsBycommentfid(userid);
+    }
 }

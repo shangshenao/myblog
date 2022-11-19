@@ -39,5 +39,27 @@
               and comment2.userid=user2.userid
               and comment1.rootid=#{rootid}
     </select>
+    <resultMap id="BeComments" type="com.shang.pojo.Comment">
+        <result property="commentid" column="commentid1"></result>
+        <result property="userid" column="userid1"></result>
+        <result property="content" column="content1"></result>
+        <result property="articleid" column="articleid1"></result>
+        <result property="createtime" column="createtime1"></result>
+        <result property="clikecount" column="clikecount1"></result>
+        <association property="user" column="" javaType="com.shang.pojo.User">
+            <result property="userid" column="userid1"></result>
+            <result property="username" column="username"></result>
+            <result property="head" column="head"></result>
+            <result property="userlocal" column="userlocal"></result>
+        </association>
+    </resultMap>
 
+    <select id="queryCommentsBycommentfid" resultMap="BeComments">
+        SELECT com2.commentid as commentid1,com2.userid as userid1,com2.content as content1,
+        com2.articleid as articleid1,com2.createtime as createtime1 ,com2.clikecount as clikecount1
+        FROM `comment` as com1,`comment` as com2,`user`
+        where com1.userid=#{userid}
+          and com1.commentid=com2.commentfid
+          and com2.userid=`user`.userid
+    </select>
 </mapper>

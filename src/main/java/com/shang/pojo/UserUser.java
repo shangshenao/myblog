@@ -9,6 +9,17 @@ public class UserUser {
     private User userfan;
     private Date followtime;
 
+    @Override
+    public String toString() {
+        return "UserUser{" +
+                "mainuserid=" + mainuserid +
+                ", fanuserid=" + fanuserid +
+                ", usermain=" + usermain +
+                ", userfan=" + userfan +
+                ", followtime=" + followtime +
+                '}';
+    }
+
     public int getMainuserid() {
         return mainuserid;
     }

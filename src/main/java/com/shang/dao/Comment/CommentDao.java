@@ -14,4 +14,6 @@ public interface CommentDao {
     public int updateComment(@Param("articleid") int articleid,@Param("clikecount") int clikecount);
     //根据rootcomment查找所有子comment
     public List<Comment> queryCommentsByrootid(@Param("rootid") int rootid);
+    //根据userid获取所有对他的评论进行评论的评论
+    public List<Comment> queryCommentsBycommentfid(@Param("userid") int userid);
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.dao.UserUser.UserUserDao">
+    <insert id="insertUserUser">
+        insert into useruser(mainuserid,fanuserid)
+        values (#{mainuserid},#{fanuserid})
+    </insert>
+    <delete id="deletetUserUser">
+        delete from useruser
+        where mainuserid=#{mainuserid}
+        and fanuserid=#{fanuserid}
+    </delete>
+    <resultMap id="Fans" type="com.shang.pojo.UserUser">
+        <result property="mainuserid" column="mainuserid"></result>
+        <result property="fanuserid" column="fanuserid"></result>
+        <result property="followtime" column="followtime"></result>
+        <association property="userfan" column="">
+            <result property="userid" column="userid"></result>
+            <result property="username" column="username"></result>
+            <result property="head" column="head"></result>
+            <result property="viewcount" column="viewcount"></result>
+            <result property="userlocal" column="userlocal"></result>
+        </association>
+    </resultMap>
+    <resultMap id="Users" type="com.shang.pojo.UserUser">
+        <result property="mainuserid" column="mainuserid"></result>
+        <result property="fanuserid" column="fanuserid"></result>
+        <result property="followtime" column="followtime"></result>
+        <association property="usermain" column="">
+            <result property="userid" column="userid"></result>
+            <result property="username" column="username"></result>
+            <result property="head" column="head"></result>
+            <result property="viewcount" column="viewcount"></result>
+            <result property="userlocal" column="userlocal"></result>
+        </association>
+    </resultMap>
+    <select id="queryFansByMainuserid" resultMap="Fans">
+        SELECT * from useruser,`user`
+        where useruser.mainuserid=#{mainuserid}
+          and useruser.fanuserid=`user`.userid
+    </select>
+    <select id="queryUsersByFanuserid" resultMap="Users">
+        SELECT * from useruser,`user`
+        where useruser.fanuserid=#{fanuserid}
+          and useruser.mainuserid=`user`.userid
+    </select>
+
+</mapper>

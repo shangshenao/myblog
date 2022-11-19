@@ -24,4 +24,10 @@ public class Comment {
         CommentDao commentDao= cpx.getBean("CommentDao",CommentDao.class);
         System.out.println(commentDao.deleteComment(5));
     }
+    @Test
+    public void queryCommentsBycommentfid(){
+        ClassPathXmlApplicationContext cpx=  new ClassPathXmlApplicationContext("configcontext.xml");
+        CommentDao commentDao= cpx.getBean("CommentDao",CommentDao.class);
+        System.out.println(commentDao.queryCommentsBycommentfid(2));
+    }
 }

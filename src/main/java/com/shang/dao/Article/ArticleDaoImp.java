@@ -28,7 +28,7 @@ public class ArticleDaoImp implements ArticleDao{
         return articleDao.updateArticle(articleid, categoryid, title, content_markdown, content_html,istop);
     }
 
-    public int updateArticleData(int articleid, int viewcount, int likecount, int favcount, int commentcount) {
+    public int updateArticleData(int articleid, int viewcount, int likecount, int favcount, int commentcount) throws Exception{
         ArticleDao articleDao=sqlsessionTemplate.getMapper(ArticleDao.class);
         return articleDao.updateArticleData(articleid, viewcount, likecount, favcount, commentcount);
     }

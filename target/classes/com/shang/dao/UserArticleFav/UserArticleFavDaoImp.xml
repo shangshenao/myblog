@@ -9,6 +9,9 @@
     <delete id="deleteUserArticleFav">
         delete from userarticle_fav where userid=#{userid} and articleid=#{articleid}
     </delete>
+    <delete id="deleteUserArticleFavByAid">
+        delete from userarticle_fav where articleid=#{articleid}
+    </delete>
     <resultMap id="Fav" type="com.shang.pojo.UserArticleFav">
         <result property="userid" column="userid"></result>
         <result property="articleid" column="articleid"></result>

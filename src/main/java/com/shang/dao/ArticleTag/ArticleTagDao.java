@@ -9,4 +9,6 @@ public interface ArticleTagDao {
     public int updateArticleTag(@Param("oldarticleid") int oldarticleid,@Param("oldtagid") int oldtagid,@Param("newarticleid") int newarticleid,@Param("newtagid") int newtagid);
     //删除一条记录
     public int deleteArticleTag(@Param("articleid") int articleid,@Param("tagid") int tagid);
+    //根据articleid删除所有记录
+    public int deleteArticleTagByid(@Param("articleid") int articleid);
 }

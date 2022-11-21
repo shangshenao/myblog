@@ -2,6 +2,7 @@ package com.shang.test.dao.Article;
 import com.shang.dao.Article.ArticleDao;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
 
 public class Article {
     @Test
@@ -40,7 +41,7 @@ public class Article {
     }
 
     @Test
-    public void updateArticleData(){
+    public void updateArticleData() throws Exception {
         ClassPathXmlApplicationContext cpx=  new ClassPathXmlApplicationContext("configcontext.xml");
         ArticleDao articleDao= cpx.getBean("ArticleDao",ArticleDao.class);
         System.out.println(articleDao.updateArticleData(1,1,0,0,0));
@@ -49,7 +50,7 @@ public class Article {
     public void deleteArticle(){
         ClassPathXmlApplicationContext cpx=  new ClassPathXmlApplicationContext("configcontext.xml");
         ArticleDao articleDao= cpx.getBean("ArticleDao",ArticleDao.class);
-        System.out.println(articleDao.deleteArticle(6));
+        System.out.println(articleDao.deleteArticle(10));
     }
     @Test
     public void insertArticle(){

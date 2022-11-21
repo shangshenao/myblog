@@ -15,19 +15,29 @@ public class CommentDaoImp implements CommentDao{
         this.sqlsessionTemplate = sqlsessionTemplate;
     }
 
-    public int insertComment(int articleid, int commentfid, int userid, String content,int rootid) {
+    public int insertComment(int articleid, int commentfid, int userid, String content,int rootid) throws Exception {
         CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
         return commentDao.insertComment(articleid, commentfid, userid, content,rootid);
     }
 
-    public int deleteComment(int commentid) {
+    public int deleteComment(int commentid) throws Exception{
         CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
         return commentDao.deleteComment(commentid);
     }
 
-    public int updateComment(int articleid, int clikecount) {
+    public int deleteComments(int rootid) throws Exception{
         CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
-        return commentDao.updateComment(articleid,clikecount);
+        return commentDao.deleteComments(rootid);
+    }
+
+    public int updateComment(int commentid, int clikecount) throws Exception{
+        CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
+        return commentDao.updateComment(commentid,clikecount);
+    }
+
+    public Comment queryCommentByCommentid(int commentid) {
+        CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
+        return commentDao.queryCommentByCommentid(commentid);
     }
 
 
@@ -40,5 +50,10 @@ public class CommentDaoImp implements CommentDao{
     public List<Comment> queryCommentsBycommentfid(int userid) {
         CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
         return commentDao.queryCommentsBycommentfid(userid);
+    }
+
+    public int deleteCommentByArticleid(int articleid) {
+        CommentDao commentDao=sqlsessionTemplate.getMapper(CommentDao.class);
+        return commentDao.deleteCommentByArticleid(articleid);
     }
 }

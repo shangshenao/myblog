@@ -2,6 +2,7 @@ package com.shang.dao.UserArticleFav;
 
 import com.shang.dao.UserArticleComment.UserArticleCommentDao;
 import com.shang.pojo.UserArticleFav;
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,12 +18,12 @@ public class UserArticleFavDaoImp implements UserArticleFavDao{
         this.sqlSessionTemplate = sqlSessionTemplate;
     }
 
-    public int insertUserArticleFav(int userid, int articleid) {
+    public int insertUserArticleFav(int userid, int articleid) throws Exception{
         UserArticleFavDao userArticleFavDao=sqlSessionTemplate.getMapper(UserArticleFavDao.class);
         return userArticleFavDao.insertUserArticleFav(userid, articleid);
     }
 
-    public int deleteUserArticleFav(int userid, int articleid) {
+    public int deleteUserArticleFav(int userid, int articleid) throws Exception{
         UserArticleFavDao userArticleFavDao=sqlSessionTemplate.getMapper(UserArticleFavDao.class);
         return userArticleFavDao.deleteUserArticleFav(userid, articleid);
     }
@@ -30,5 +31,9 @@ public class UserArticleFavDaoImp implements UserArticleFavDao{
     public List<UserArticleFav> queryUserArticleFavByuserid(int userid) {
         UserArticleFavDao userArticleFavDao=sqlSessionTemplate.getMapper(UserArticleFavDao.class);
         return userArticleFavDao.queryUserArticleFavByuserid(userid);
+    }
+    public int deleteUserArticleFavByAid( int articleid){
+        UserArticleFavDao userArticleFavDao=sqlSessionTemplate.getMapper(UserArticleFavDao.class);
+        return userArticleFavDao.deleteUserArticleFavByAid(articleid);
     }
 }

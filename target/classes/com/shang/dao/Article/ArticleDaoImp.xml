@@ -22,9 +22,9 @@
         </set>
         where articleid=#{articleid};
     </update>
-    <delete id="deleteArticle">
-        delete from article where articleid=#{articleid}
-    </delete>
+    <update id="deleteArticle">
+        update article set isdel=1 where articleid=#{articleid}
+    </update>
     <resultMap id="resarticle" type="com.shang.pojo.Article">
         <result property="userid" column="userid"></result>
         <result property="articleid" column="articleid"></result>
@@ -82,7 +82,12 @@
 
     </resultMap>
     <select id="queryArticle" resultMap="resarticle">
-        select * from article,`user`,`comment` where article.userid=`user`.userid and article.articleid=`comment`.articleid  and comment.rootid=0 and article.articleid=#{articleid};
+        select * from article,`user`,`comment`
+        where article.userid=`user`.userid
+          and article.articleid=`comment`.articleid
+          and comment.rootid=0
+          and article.articleid=#{articleid}
+          and article.isdel=0
     </select>
 
     <select id="queryArticles" resultMap="resarticles">
@@ -96,7 +101,7 @@
             #{tag}
         </foreach>
         </if>
-
+        and article.isdel=0
         </where>
         order by article.createtime limit #{currentpageno},#{pagesize};
     </select>
@@ -105,6 +110,7 @@
         <where> article.userid=`user`.userid and category.categoryid=article.categoryid and articletag.tagid=tag.tagid and articletag.articleid=article.articleid
 
         </where>
+        and article.isdel=0
         order by article.createtime limit #{currentpageno},#{pagesize};
     </select>
     <select id="getArticlesCount" resultType="_int">
@@ -118,6 +124,7 @@
                     #{tag}
                 </foreach>
             </if>
+            and article.isdel=0
         </where>
     </select>
 

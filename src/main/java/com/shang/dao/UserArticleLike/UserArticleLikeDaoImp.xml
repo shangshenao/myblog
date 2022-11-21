@@ -9,6 +9,9 @@
     <delete id="deleteUserArticleLike">
         delete from userarticle_like where userid=#{userid} and articleid=#{articleid}
     </delete>
+    <delete id="deleteUserArticleLikeByAid">
+        delete from userarticle_like where articleid=#{articleid}
+    </delete>
     <resultMap id="Likes" type="com.shang.pojo.UserArticleLike">
         <result property="userid" column="userid"></result>
         <result property="articleid" column="articleid"></result>

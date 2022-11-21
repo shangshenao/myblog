@@ -27,4 +27,10 @@ public class ArticleTagDaoImp implements ArticleTagDao{
         ArticleTagDao articleTagDao=sqlSessionTemplate.getMapper(ArticleTagDao.class);
         return articleTagDao.deleteArticleTag(articleid, tagid);
     }
+
+    public int deleteArticleTagByid(int articleid) {
+        ArticleTagDao articleTagDao=sqlSessionTemplate.getMapper(ArticleTagDao.class);
+        return articleTagDao.deleteArticleTagByid(articleid);
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.shang.dao.UserArticleLike;
 
 import com.shang.pojo.UserArticleLike;
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,12 +17,12 @@ public class UserArticleLikeDaoImp implements UserArticleLikeDao{
         this.sqlSessionTemplate = sqlSessionTemplate;
     }
 
-    public int insertUserArticleLike(int userid, int articleid) {
+    public int insertUserArticleLike(int userid, int articleid) throws Exception {
         UserArticleLikeDao userArticleLikeDao = sqlSessionTemplate.getMapper(UserArticleLikeDao.class);
         return userArticleLikeDao.insertUserArticleLike(userid,articleid);
     }
 
-    public int deleteUserArticleLike(int userid, int articleid) {
+    public int deleteUserArticleLike(int userid, int articleid) throws Exception{
         UserArticleLikeDao userArticleLikeDao = sqlSessionTemplate.getMapper(UserArticleLikeDao.class);
         return userArticleLikeDao.deleteUserArticleLike(userid,articleid);
     }
@@ -29,5 +30,9 @@ public class UserArticleLikeDaoImp implements UserArticleLikeDao{
     public List<UserArticleLike> queryUserArticleLikes(int userid) {
         UserArticleLikeDao userArticleLikeDao = sqlSessionTemplate.getMapper(UserArticleLikeDao.class);
         return userArticleLikeDao.queryUserArticleLikes(userid);
+    }
+    public int deleteUserArticleLikeByAid( int articleid){
+        UserArticleLikeDao userArticleLikeDao = sqlSessionTemplate.getMapper(UserArticleLikeDao.class);
+        return userArticleLikeDao.deleteUserArticleLikeByAid(articleid);
     }
 }

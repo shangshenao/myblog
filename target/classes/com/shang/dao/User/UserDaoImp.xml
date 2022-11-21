@@ -54,7 +54,8 @@
     where `user`.userid=article.userid and article.categoryid=category.categoryid
       and article.articleid=articletag.articleid
       and tag.tagid=articletag.tagid
-       and `user`.userid= #{userid};
+       and `user`.userid= #{userid}
+      and article.isdel=0
 </select>
     <select id="queryUserByname" resultMap="Users">
         SELECT
@@ -79,5 +80,8 @@
                 `user`.username = #{username}
             </if>
         </where>
+    </select>
+    <select id="queryUserByNamePwd" resultType="com.shang.pojo.User">
+        select * from `user` where username=#{username} and userpwd=#{userpwd}
     </select>
 </mapper>

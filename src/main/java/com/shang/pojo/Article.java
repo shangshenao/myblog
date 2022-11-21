@@ -17,6 +17,7 @@ public class Article {
     private int likecount;
     private int favcount;
     private int commentcount;
+    private Byte isdel;
     private Category category;
     private User user;
     //一对多
@@ -29,6 +30,14 @@ public class Article {
 
     public User getUser() {
         return user;
+    }
+
+    public Byte getIsdel() {
+        return isdel;
+    }
+
+    public void setIsdel(Byte isdel) {
+        this.isdel = isdel;
     }
 
     @Override
@@ -46,6 +55,7 @@ public class Article {
                 ", likecount=" + likecount +
                 ", favcount=" + favcount +
                 ", commentcount=" + commentcount +
+                ", isdel=" + isdel +
                 ", category=" + category +
                 ", user=" + user +
                 ", comments=" + comments +

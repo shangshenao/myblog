@@ -7,13 +7,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserArticleFav {
     @Test
-    public void insertUserArticleFav(){
+    public void insertUserArticleFav() throws Exception {
         ClassPathXmlApplicationContext cpx=  new ClassPathXmlApplicationContext("configcontext.xml");
         UserArticleFavDao userArticleFavDao= cpx.getBean(UserArticleFavDao.class);
         System.out.println(userArticleFavDao.insertUserArticleFav(1,1));
     }
     @Test
-    public void deleteUserArticleFav(){
+    public void deleteUserArticleFav() throws Exception {
         ClassPathXmlApplicationContext cpx=  new ClassPathXmlApplicationContext("configcontext.xml");
         UserArticleFavDao userArticleFavDao= cpx.getBean(UserArticleFavDao.class);
         System.out.println(userArticleFavDao.deleteUserArticleFav(1,1));

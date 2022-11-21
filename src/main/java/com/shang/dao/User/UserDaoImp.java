@@ -33,6 +33,12 @@ public class UserDaoImp implements UserDao{
         return userDao.deleteUser(userid);
     }
 
+    public User queryUserByNamePwd(String username, String userpwd) {
+        UserDao userDao=sqlsessionTemplate.getMapper(UserDao.class);
+
+        return userDao.queryUserByNamePwd(username, userpwd);
+    }
+
     public User queryUserByid(int userid) {
         UserDao userDao=sqlsessionTemplate.getMapper(UserDao.class);
 
@@ -45,7 +51,7 @@ public class UserDaoImp implements UserDao{
         return userDao.queryUserByname(username, currentpageno, pagesize);
     }
 
-    public List<User> getUserCountByname(String username) {
+    public int getUserCountByname(String username) {
         UserDao userDao=sqlsessionTemplate.getMapper(UserDao.class);
 
         return userDao.getUserCountByname(username);

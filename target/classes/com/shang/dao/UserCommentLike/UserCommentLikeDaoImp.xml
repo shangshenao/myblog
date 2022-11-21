@@ -27,6 +27,9 @@
             </association>
         </association>
     </resultMap>
+    <select id="queryUserCommentLike" resultType="com.shang.pojo.UserCommentLike">
+        select * from usercomment_like where userid=#{userid} and commentid=#{commentid}
+    </select>
     <select id="queryUserCommentLikes" resultMap="Likes">
         SELECT
             *

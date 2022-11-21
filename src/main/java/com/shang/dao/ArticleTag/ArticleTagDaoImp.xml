@@ -13,4 +13,8 @@
         delete FROM articletag
         where  articleid=#{articleid} and tagid=#{tagid}
     </delete>
+    <delete id="deleteArticleTagByid">
+        delete FROM articletag
+        where  articleid=#{articleid}
+    </delete>
 </mapper>

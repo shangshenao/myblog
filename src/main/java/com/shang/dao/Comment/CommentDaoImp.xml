@@ -7,8 +7,17 @@
         INSERT INTO `comment` ( articleid, commentfid, userid, content, rootid )
         VALUES(#{articleid},#{commentfid},#{userid},#{content},#{rootid})
     </insert>
+    <select id="queryCommentByCommentid" resultType="com.shang.pojo.Comment" >
+        select * from `comment` where commentid=#{commentid}
+    </select>
     <delete id="deleteComment">
         delete from `comment` where commentid=#{commentid}
+    </delete>
+    <delete id="deleteComments">
+        delete from `comment` where rootid=#{rootid}
+    </delete>
+    <delete id="deleteCommentByArticleid">
+        delete from `comment` where articleid=#{articleid}
     </delete>
     <update id="updateComment">
         UPDATE `comment` set clikecount=clikecount+#{clikecount} where commentid=#{commentid};

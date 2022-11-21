@@ -16,14 +16,18 @@ public class UserCommentLikeDaoImp implements UserCommentLikeDao{
         this.sqlSessionTemplate = sqlSessionTemplate;
     }
 
-    public int insertUserCommentLike(int userid, int commentid) {
+    public int insertUserCommentLike(int userid, int commentid) throws Exception{
         UserCommentLikeDao userCommentLikeDao=sqlSessionTemplate.getMapper(UserCommentLikeDao.class);
         return userCommentLikeDao.insertUserCommentLike(userid,commentid);
     }
 
-    public int deleteUserCommentLike(int userid, int commentid) {
+    public int deleteUserCommentLike(int userid, int commentid) throws Exception{
         UserCommentLikeDao userCommentLikeDao=sqlSessionTemplate.getMapper(UserCommentLikeDao.class);
         return userCommentLikeDao.deleteUserCommentLike(userid,commentid);
+    }
+    public UserCommentLike queryUserCommentLike(int userid, int commentid) {
+        UserCommentLikeDao userCommentLikeDao=sqlSessionTemplate.getMapper(UserCommentLikeDao.class);
+        return userCommentLikeDao.queryUserCommentLike(userid,commentid);
     }
 
     public List<UserCommentLike> queryUserCommentLikes(int userid) {

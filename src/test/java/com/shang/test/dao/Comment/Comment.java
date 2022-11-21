@@ -13,13 +13,13 @@ public class Comment {
         System.out.println(commentDao.queryCommentsByrootid(1));
     }
     @Test
-    public void insertComment(){
+    public void insertComment() throws Exception {
         ClassPathXmlApplicationContext cpx=  new ClassPathXmlApplicationContext("configcontext.xml");
         CommentDao commentDao= cpx.getBean("CommentDao",CommentDao.class);
         System.out.println(commentDao.insertComment(1,3,2,"fuck",1));
     }
     @Test
-    public void deleteComment(){
+    public void deleteComment() throws Exception {
         ClassPathXmlApplicationContext cpx=  new ClassPathXmlApplicationContext("configcontext.xml");
         CommentDao commentDao= cpx.getBean("CommentDao",CommentDao.class);
         System.out.println(commentDao.deleteComment(5));

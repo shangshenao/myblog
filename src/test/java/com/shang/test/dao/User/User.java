@@ -36,4 +36,10 @@ public class User {
         System.out.println(userdao.updateUser(1,"shang","hhh","tt.png","student","hubei"));
     }
 
+    @Test
+    public void queryUserByNamePwd(){
+        ClassPathXmlApplicationContext cpx=new ClassPathXmlApplicationContext("configcontext.xml");
+        UserDao userdao= cpx.getBean("UserDao",UserDao.class);
+        System.out.println(userdao.queryUserByNamePwd("shang","hhh"));
+    }
 }
